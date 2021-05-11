@@ -6,6 +6,6 @@ public class Super {
 		System.out.println("Super makeMoney() 호출");
 	}
 	public void play(String badook) {
-		System.out.println("Super paly(~) 호출");
+		System.out.println("Super play(~) 호출");
 	}
 }
