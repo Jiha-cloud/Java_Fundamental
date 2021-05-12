@@ -9,4 +9,5 @@ public class StopWatchDemo {
 		StopWatch s = new StopMicroWatch();
 		run(s);
 	}
+
 }
