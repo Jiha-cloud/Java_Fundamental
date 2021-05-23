@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 public class PrintStreamDemo {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		FileInputStream fis = null;
 		BufferedInputStream bis = null;
 		FileOutputStream fos = null;
@@ -21,7 +21,7 @@ public class PrintStreamDemo {
 		ps1.println("Hello");
 		ps1.println("안녕하세요");
 		
-		try {
+		
 		fis = new FileInputStream("C:\\dev\\test\\2021\\05\\18\\eclips.zip");
 		bis = new BufferedInputStream(fis);	
 		
@@ -34,50 +34,12 @@ public class PrintStreamDemo {
 		ps = new PrintStream(bos,true); // 두 번째 boolean은 auto flush 여부
 
 		int readByte = 0;
-		try {
+		
 			while((readByte = bis.read()) != -1) {
 				ps.write(readByte);
 				//ps.flush(); 필요없음 
 			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		}catch(FileNotFoundException e){
-			e.printStackTrace();
-		}finally {
-			if(fis != null)
-				try {
-					fis.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			if(bis != null)
-				try {
-					bis.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			if(fos != null)
-				try {
-					fos.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			if(ps != null) ps.close();
-
-			if(bos != null)
-				try {
-					bos.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		}
+		
 		
 	}
 }
