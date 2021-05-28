@@ -6,19 +6,21 @@ public class EmpDTO {
 	private String job;
 	private int mgr;
 	private String hiredate; // insert 2021-05-27 select date_format()
+	private double sal;
 	private double comm;
 	private int deptNo;
 	public EmpDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public EmpDTO(int no, String name, String job, int mgr, String hiredate, double comm, int deptNo) {
+	public EmpDTO(int no, String name, String job, int mgr, String hiredate, double sal, double comm, int deptNo) {
 		super();
 		this.no = no;
 		this.name = name;
 		this.job = job;
 		this.mgr = mgr;
 		this.hiredate = hiredate;
+		this.sal = sal;
 		this.comm = comm;
 		this.deptNo = deptNo;
 	}
@@ -42,6 +44,12 @@ public class EmpDTO {
 	}
 	public int getMgr() {
 		return mgr;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
 	}
 	public void setMgr(int mgr) {
 		this.mgr = mgr;
